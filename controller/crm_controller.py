@@ -40,13 +40,13 @@ def run_operation(option):
 
 
 def display_menu():
-    options = ["Back to main menu",
-               "List customers",
-               "Add new customer",
-               "Update customer",
-               "Remove customer",
-               "Subscribed customer emails"]
-    view.print_menu("Customer Relationship Management", options)
+    options = ["1 ---> List customers",
+               "2 ---> Add new customer",
+               "3 ---> Update customer",
+               "4 ---> Remove customer",
+               "5 ---> Subscribed customer emails",
+               "6 ---> Back to main menu"]
+    view.print_menu("  ***ERP***\nCustomer Relationship Management:", options)
 
 
 def menu():
@@ -54,7 +54,7 @@ def menu():
     while operation != '0':
         display_menu()
         try:
-            operation = view.get_input("Select an operation")
+            operation = view.get_input("Select an operation: ")
             run_operation(int(operation))
         except KeyError as err:
             view.print_error_message(err)

@@ -58,16 +58,17 @@ def run_operation(option):
 
 
 def display_menu():
-    options = ["Back to main menu",
-               "List transactions",
-               "Add new transaction",
-               "Update transaction",
-               "Remove transaction",
-               "Get the transaction that made the biggest revenue",
-               "Get the product that made the biggest revenue altogether",
-               "Count number of transactions between",
-               "Sum the price of transactions between"]
-    view.print_menu("Sales", options)
+    options = ["1 ---> List transactions",
+               "2 ---> Add new transaction",
+               "3 ---> Update transaction",
+               "4 ---> Remove transaction",
+               "5 ---> Get the transaction that made the biggest revenue",
+               "6 ---> Get the product that made the biggest revenue altogether",
+               "7 ---> Count number of transactions between",
+               "8 ---> Sum the price of transactions between",
+               "0 ---> Back to main menu"]
+    view.print_menu("   ***ERP***\n   Sales:", options)
+
 
 
 def menu():
@@ -75,7 +76,7 @@ def menu():
     while operation != '0':
         display_menu()
         try:
-            operation = view.get_input("Select an operation")
+            operation = view.get_input("Select an operation: ")
             run_operation(int(operation))
         except KeyError as err:
             view.print_error_message(err)

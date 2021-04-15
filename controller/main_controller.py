@@ -16,11 +16,11 @@ def load_module(option):
 
 
 def display_menu():
-    options = ["Exit program",
-               "Customer Relationship Management (CRM)",
-               "Sales",
-               "Human Resources"]
-    view.print_menu("Main menu", options)
+    options = ["1 --->  Customer Relationship Management (CRM)",
+               "2 --->  Sales",
+               "3 --->  Human Resources",
+               "0 --->  Exit program"]
+    view.print_menu("   ***ERP***\n   MAIN MENU: \n", options)
 
 
 def menu():
@@ -28,7 +28,7 @@ def menu():
     while option != '0':
         display_menu()
         try:
-            option = view.get_input("Select module")
+            option = view.get_input("Select module: ")
             load_module(int(option))
         except KeyError:
             view.print_error_message("There is no such option!")

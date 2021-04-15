@@ -38,43 +38,45 @@ def count_employees_per_department():
     view.print_error_message("Not implemented yet.")
 
 
-def run_operation(option):
-    if option == 1:
+def run_operation(options):
+
+     
+    if options == 1:
         list_employees()
-    elif option == 2:
+    elif options == 2:
         add_employee()
-    elif option == 3:
+    elif options == 3:
         update_employee()
-    elif option == 4:
+    elif options == 4:
         delete_employee()
-    elif option == 5:
+    elif options == 5:
         get_oldest_and_youngest()
-    elif option == 6:
+    elif options == 6:
         get_average_age()
-    elif option == 7:
+    elif options == 7:
         next_birthdays()
-    elif option == 8:
+    elif options == 8:
         count_employees_with_clearance()
-    elif option == 9:
+    elif options == 9:
         count_employees_per_department()
-    elif option == 0:
+    elif options == 0:
         return
     else:
         raise KeyError("There is no such option.")
 
 
 def display_menu():
-    options = ["Back to main menu",
-               "List employees",
-               "Add new employee",
-               "Update employee",
-               "Remove employee",
-               "Oldest and youngest employees",
-               "Employees average age",
-               "Employees with birthdays in the next two weeks",
-               "Employees with clearance level",
-               "Employee numbers by department"]
-    view.print_menu("Human resources", options)
+    options =["1 ---> List employees",
+            "2 ---> Add new employee",
+            "3 ---> Update employee",
+            "4 ---> Remove employee",
+            "5 ---> Oldest and youngest employees",
+            "6 ---> Employees average age",
+            "7 ---> Employees with birthdays in the next two weeks",
+            "8 ---> Employees with clearance level",
+            "9 ---> Employee numbers by department",
+            "0 ---> Back to main menu"]
+    view.print_menu("   ***ERP***\n   Human resources:", options)
 
 
 def menu():
@@ -82,7 +84,7 @@ def menu():
     while operation != '0':
         display_menu()
         try:
-            operation = view.get_input("Select an operation")
+            operation = view.get_input("Select an operation: ")
             run_operation(int(operation))
         except KeyError as err:
             view.print_error_message(err)
