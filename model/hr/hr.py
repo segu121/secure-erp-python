@@ -12,3 +12,12 @@ from model import data_manager, util
 
 DATAFILE = "model/hr/hr.csv"
 HEADERS = ["Id", "Name", "Date of birth", "Department", "Clearance"]
+def get_employees():
+    
+    employess = data_manager.read_table_from_file(DATAFILE)
+    date_to_table = [HEADERS] +employess
+    return date_to_table
+
+    
+    
+

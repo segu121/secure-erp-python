@@ -3,7 +3,8 @@ from view import terminal as view
 
 
 def list_employees():
-    view.print_error_message("Not implemented yet.")
+    view.print_table(hr.get_employees())
+    
 
 
 def add_employee():
@@ -76,7 +77,7 @@ def display_menu():
             "8 ---> Employees with clearance level",
             "9 ---> Employee numbers by department",
             "0 ---> Back to main menu"]
-    view.print_menu("   ***ERP***\n   Human resources:", options)
+    view.print_menu("\n   ***ERP***\nHuman resources:", options)
 
 
 def menu():

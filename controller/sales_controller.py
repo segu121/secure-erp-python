@@ -67,8 +67,8 @@ def display_menu():
                "7 ---> Count number of transactions between",
                "8 ---> Sum the price of transactions between",
                "0 ---> Back to main menu"]
-    view.print_menu("   ***ERP***\n   Sales:", options)
-
+    view.print_menu("   ***ERP***\n     Sales:", options)
+ 
 
 
 def menu():

@@ -3,7 +3,8 @@ from view import terminal as view
 
 
 def list_customers():
-    view.print_error_message("Not implemented yet.")
+    customers = crm.get_customers()
+    print(customers)
 
 
 def add_customer():
@@ -45,7 +46,7 @@ def display_menu():
                "3 ---> Update customer",
                "4 ---> Remove customer",
                "5 ---> Subscribed customer emails",
-               "6 ---> Back to main menu"]
+               "0 ---> Back to main menu"]
     view.print_menu("  ***ERP***\nCustomer Relationship Management:", options)
 
 

@@ -44,29 +44,27 @@ def print_general_results(result, label):
 # |--------|------------|----------|
 # |   1    | Sidewinder | missile  |
 # \-----------------------------------/
-def print_table(table,HEADERS):
+def print_table(table):
     """Prints tabular data like above.
 
     Args:
         table: list of lists - the table to print out
     """
-    table.insert(0, HEADERS)
-    maxlength = []
-    for column in range(len(table[0])):
-        length = 0
-        for row in range(len(table)):
-            if len(str(table[row][column])) > length:
-                length = len(str(table[row][column]))
-        maxlength.append(length)
-
-    for row_i in range(len(table)):
-        row = table[row_i]
-        print()
-        for cell_j in range(len(row)):
-            cell = row[cell_j]
-            width = maxlength[cell_j]
-            print(" | " + cell.center(width) + " | ", end='')
-
+    
+    list_len_records = []
+    longest_length_of_word = []
+    for i in range(len(table)):
+        list_len_records.append([])
+        for record in table[i]:
+            list_len_records[i].append(len(record))
+        longest_length_of_word.append((max(list_len_records[i])))
+    for index, record in enumerate(table):
+        line = '|'.join(str(x).ljust(max(longest_length_of_word)) for x in record)
+        if index == 0:
+            print("-" * len(line))
+        print(line)
+        if index == 0 or index + 1 == len(table):
+            print("-" * len(line))
 
 def get_input(label):
     
