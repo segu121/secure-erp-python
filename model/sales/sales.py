@@ -12,3 +12,8 @@ from model import data_manager, util
 
 DATAFILE = "model/sales/sales.csv"
 HEADERS = ["Id", "Customer", "Product", "Price", "Date"]
+
+def get_sales():
+    sales = data_manager.read_table_from_file(DATAFILE)
+    date_to_table = [HEADERS] + sales
+    return date_to_table
