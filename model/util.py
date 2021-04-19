@@ -15,7 +15,9 @@ def generate_id(number_of_small_letters=4,
 
     id_generator = letters_lower+letters_upper+numbers+special_char
     random.shuffle(id_generator)
-    print( " Your new ID:",''.join(id_generator))
-generate_id()
+    Id="".join(id_generator)
+    return Id
+ 
+
                 
-    
+     

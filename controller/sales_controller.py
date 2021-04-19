@@ -3,16 +3,43 @@ from view import terminal as view
 
 
 def list_transactions():
-    view.print_table(sales.get_sales())
-
+    list_sale = sales.sale()
+    # view.print_error_message("Not implemented yet.")
+    view.print_table(list_sale)
 
 def add_transaction():
-    view.print_error_message("Not implemented yet.")
+    list_sale = sales.sale()
+    view.print_table(list_sale)
 
 
+    label = "Write:  - customer id, product, price, transaction"
+    user_input = view.get_input(label)
+    inputs = view.get_inputs(user_input)
+    sales.create_sale(inputs)
+
+
+    list_sale = sales.sale()
+    view.print_table(list_sale)
 def update_transaction():
-    view.print_error_message("Not implemented yet.")
+    # view.print_error_message("Not implemented yet.")
+    list_sale = sales.sale()
+    view.print_table(list_sale)
+    label = "Write:  Id"
+    user_input = view.get_input(label)
 
+    for element in list_sale:
+        if element[0] == user_input:
+            label1 = "Write: customer id, product, price, transaction"
+            view.get_inputs(label,label1)
+            sales.uptade(label)
+        else:
+            label = "Write:  - customer id, product, price, transaction"
+            user_input = view.get_input(label)
+            inputs = view.get_inputs(user_input)
+            sales.create_sale(inputs)
+
+    list_sale = sales.sale()
+    view.print_table(list_sale)
 
 def delete_transaction():
     view.print_error_message("Not implemented yet.")

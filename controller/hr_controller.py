@@ -4,13 +4,21 @@ from view import terminal as view
 
 def list_employees():
     view.print_table(hr.get_employees())
-    
 
 
 def add_employee():
-    view.print_error_message("Not implemented yet.")
+    view.print_table(hr.get_employees())
+    id_ = ([hr.new_employee_id()])
+    record = view.get_inputs(["Name: ","Date_of_birth: ","Department: ","Clerance: "])
+    employees = hr.list_employees()
+    record = [id_ + record]
+    new_employees = employees + record
+    view.print_table(hr.create(record,new_employees))
+    
 
 
+   
+    
 def update_employee():
     view.print_error_message("Not implemented yet.")
 

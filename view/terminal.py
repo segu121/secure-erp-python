@@ -19,13 +19,8 @@ def print_menu(title, list_options):
 
 
 def print_message(message):
-    """Prints a single message to the terminal.
-
-    Args:
-        message: str - the message
-    """
-
-    pass
+    print("DONE!"  + message)
+    
 
 
 def print_general_results(result, label):
@@ -85,7 +80,7 @@ def get_inputs(labels):
     inputs = []
 
     for elements in labels:
-        user_inputs= input(elements)
+        user_inputs = input(elements)
         inputs.append(user_inputs)
 
     return inputs
