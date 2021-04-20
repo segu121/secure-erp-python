@@ -26,11 +26,8 @@ def sale():
 
 
 def list_sale():
-    sales = data_manager.read_table_from_file(DATAFILE)
-    return sales
 
-
-
+    return data_manager.read_table_from_file(DATAFILE)
 
 
 def create_sale(inputs_value):
